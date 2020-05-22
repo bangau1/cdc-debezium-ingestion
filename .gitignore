@@ -1,3 +1,5 @@
 .idea/
 rds2fluentd/target/
 *.iml
+.project
+.classpath
