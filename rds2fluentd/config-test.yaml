@@ -1,0 +1,30 @@
+fluentd:
+  tag: rds2fluentd-test
+  host: localhost
+  port: 24224
+
+ingestionList:
+- id: "test_studentdb"
+  dbHost: "localhost"
+  dbPort: "5432"
+  dbName: "studentdb"
+  dbUser: "user" #todo: move credential to different location
+  dbPassword: "password" #todo: move credential to different location
+  readInitialSnapshot: true
+
+- id: "test_studentdb_2"
+  dbHost: "localhost"
+  dbPort: "5432"
+  dbName: "studentdb"
+  dbUser: "user" #todo: move credential to different location
+  dbPassword: "password" #todo: move credential to different location
+  readInitialSnapshot: true
+
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+    # Sets the level for 'com.example.app' to DEBUG.
+    tech.agung.cdc.FluentdProducer: ALL
